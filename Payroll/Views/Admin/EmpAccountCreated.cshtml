@@ -1,0 +1,125 @@
+@{
+    ViewData["Title"] = "EMP Account Created";
+}
+@{
+  Layout = "_Admin";
+}
+<!DOCTYPE html>
+<html>
+<head>
+<body background="https://th.bing.com/th/id/OIP.SEBR60Abl1PhqfjUbz-g0gHaEK?w=315&h=180&c=7&r=0&o=5&pid=1.7" style="background-size: cover;"></body>  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2 style="color: #f1f1f1;"> Menu </h2>
+  <a  asp-controller="Admin" asp-action="AdminHome">
+          <span>Main dashboard</span>
+        </a>
+        <a asp-controller="Admin" asp-action="CreateEmpAccount">
+          <span>Add Employee</span>
+        </a>
+        <a  asp-controller="Admin" asp-action="EmployeeDetails" >
+            <span>Employee Details</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReportSearch">
+          <span>Search Employee Report</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReport"><span>Salary Report</span></a>
+        @* <a  asp-controller="Admin" asp-action="AddAdmin"><span>Add Admin</span></a> *@
+        <a  asp-controller="Admin" asp-action="GenerateSalary"><span>Generate Salary</span></a>       
+        <a href="#">
+         <span>Change Employee Password</span>
+        </a>
+
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()" style="margin-left:-12%;">☰ Open Sidebar</button>  
+  <div style="margin-left: -11%;">
+
+    <div class="text-center">
+    <h1 class="display-4" style="font-size: 10ch; font-weight:bold">Employee Account Created Successfully</h1>
+    </div>
+    <a asp-action="AdminHome">Go Back</a>
+  
+  </div>
+</div>
+
+<script>
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+}
+</script>
+   
+</body>
+</html> 

@@ -1,0 +1,106 @@
+@model CreateSalaryClass
+@{
+    ViewData["Title"] = "Add Salary Class";
+    Layout = "_Admin";
+}
+<h2>Add Salary Class</h2>
+
+<form method="post">
+  <label>Class Name:</label><br>
+  <input type="text" name="CreateSalaryClass.ClassName" ><br>
+
+  <label>Basic Pay:</label><br>
+  <input type="number" name="CreateSalaryClass.BasicPay"><br><br>
+
+  <label>Salary:</label><br>
+  <input type="number" name="CreateSalaryClass.Salary"><br>
+
+  <label>Travel Allowance:</label><br>
+  <input type="number" name="CreateSalaryClass.TravelAllowance"><br><br>
+
+  <label >Medical Allowance:</label><br>
+  <input type="number" name="CreateSalaryClass.MedicalAlowance" ><br>
+
+  <label>Internet Allowance:</label><br>
+  <input type="number" name="CreateSalaryClass.InternetAllowance"><br><br>
+
+  <input type="submit" value="Submit">
+  <p style="margin-left: 150px;color:red;">@ViewBag.message</p>
+</form> 
+
+
+
+
+@* <div style="top: 50%;">
+    <div style= class="container-fluid">
+        <div class="col py-3">
+  <div  class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <form method="post" asp-action="SalaryClass" asp-controller="Admin">
+              <h1 class="text-center">Add Salary Class:</h1>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" id="form6Example1" asp-for="ClassName" class="form-control" pattern="^[a-zA-Z0-9]+" title="Enter Class name" required/>
+                    <label class="form-label" asp-for="ClassName" for="form6Example1">Class Name</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">         
+                    <label asp-for="BasicPay" >Basic Pay</label>   
+                    <input type="number" asp-for="BasicPay" placeholder="BasicPay"required/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <label asp-for="Salary" >Salary</label>
+                    <input type="number" asp-for="Salary" placeholder="Salary" required/>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <label asp-for="TravelAllowance" >Travel Allowance</label>
+                    <input type="number" name="TravelAllowance" laceholder="TraverAllowance"required/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <label asp-for="MedicalAlowance" >Medical Allowance</label>
+                    <input type="number" asp-for="MedicalAlowance" placeholder="MedicalAlowance"required/>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <label asp-for="InternetAllowance" >Internet Allowance</label>
+                    <input type="number" asp-for="InternetAllowance" placeholder="InternetAllowance" required/>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg">Add Class</button>
+                <p style="margin-left: 150px;color:red;">@ViewBag.message</p>
+              </div>
+
+              <a asp-action="AdminHome">Go Back</a>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </div>
+    </div>
+  </div> *@

@@ -1,0 +1,218 @@
+@model IEnumerable<CreateEmpAccount>
+@{
+    ViewData["Title"]="List";
+}
+@{
+  Layout = "_Admin";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+th,td{
+        padding: 10px;
+        text-align: center;
+    }
+    button{
+        border:none ;
+        background-color: rgb(62, 194, 132);
+        border-radius: 7%;
+    }
+    label{
+        margin-left: 400px;
+        width: 400px;
+        font-weight: bold;
+        font-size: xx-large
+    }
+    table{
+        margin-left: 150px;
+        margin-top: 10%;
+
+    }
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2 style="color: #f1f1f1;"> Menu </h2>
+  <a  asp-controller="Admin" asp-action="AdminHome">
+          <span>Main dashboard</span>
+        </a>
+        <a asp-controller="Admin" asp-action="CreateEmpAccount">
+          <span>Add Employee</span>
+        </a>
+        <a  asp-controller="Admin" asp-action="EmployeeDetails" >
+            <span>Employee Details</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReportSearch">
+          <span>Search Employee Report</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReport"><span>Salary Report</span></a>
+        @* <a  asp-controller="Admin" asp-action="AddAdmin"><span>Add Admin</span></a> *@
+        <a  asp-controller="Admin" asp-action="GenerateSalary"><span>Generate Salary</span></a>       
+        <a href="#">
+         <span>Change Employee Password</span>
+        </a>
+
+</div>
+
+<div id="main" style="left: 10%;">
+  <label>Employee Details</label>
+<br>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<table border=3 style="margin-left: -1%;">
+    <thead>
+        <tr>
+          
+          <th>Name</th>
+          <th>Address</th>
+          <th>Gender</th>
+          <th>ID</th>
+          <th>City</th>
+          <th>Pincode</th>
+          <th>Mobile</th>
+          <th>Salary</th>
+          <th>Department</th>
+          <th>Bank Account No.</th>
+          <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(CreateEmpAccount user in Model){
+            <tr>              
+                <td>@user.Name</td>
+                <td>@user.Address</td>
+                <td>@user.Gender</td>
+                <td>@user.EmpID</td>
+                <td>@user.City</td>
+                <td>@user.Pincode</td>
+                <td>@user.Mobile</td>
+                <td>@user.Salary</td>
+                <td>@user.Department</td>
+                <td>@user.BankAccNo</td>
+                <td>@user.Email</td>
+                <form method="post" asp-action="Delete" asp-controller="Admin" asp-route-id=@user.EmpID> 
+                  <p style="margin-left: 150px;color:red;">@ViewBag.Message</p>
+                <td><button type="submit">Delete</button></td>
+                </form> 
+                <form method="post" asp-action="EmployeeDetails" asp-controller="Admin" asp-route-id=@user.EmpID>
+                <td><button type="submit">Update</button></td>
+                </form>
+            </tr>
+        }
+    </tbody>
+</table>
+  
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+   
+</body>
+</html> 

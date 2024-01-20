@@ -1,0 +1,131 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Payroll
+build_property.RootNamespace = Payroll
+build_property.ProjectDir = C:\Users\krish.senguttuvan\Desktop\payroll\Payroll\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\krish.senguttuvan\Desktop\payroll\Payroll
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/AddAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/EmpAccountCreated.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRW1wQWNjb3VudENyZWF0ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/EmpUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRW1wVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/GenerateSalary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2VuZXJhdGVTYWxhcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/MultipleTrans.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTXVsdGlwbGVUcmFucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/SalaryClass.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2FsYXJ5Q2xhc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/SingleTrans.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2luZ2xlVHJhbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/ViewFeedback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld0ZlZWRiYWNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Employee/EmployeeHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW1wbG95ZWVIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Employee/Feedback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRmVlZGJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Employee/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Employee/MyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTXlBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Shared/_Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Shared/_Employee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/AdminHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-fl7z3avm2p
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/CreateEmpAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlRW1wQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-52jz79lb01
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/EmployeeDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRW1wbG95ZWVEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-c849aioc6e
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/SalaryReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2FsYXJ5UmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-mb0fnrkubs
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/SalaryReportResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2FsYXJ5UmVwb3J0UmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-gacx54cy19
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/SalaryReportSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2FsYXJ5UmVwb3J0U2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-y054nlf6fl
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Admin/test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cdGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-hspktc52iu
+
+[C:/Users/krish.senguttuvan/Desktop/payroll/Payroll/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-34640bbek4

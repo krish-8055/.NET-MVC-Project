@@ -1,0 +1,66 @@
+@model CreateEmpAccount
+@{
+    ViewData["Title"]="SearchResult";
+}
+@{
+  Layout = "_Admin";
+}
+<h1>Employee Details</h1>
+
+
+
+<table style="background-color: whitesmoke;"  \ width="30%"  border="2">  
+<body>
+        <tr>
+            <td><strong>Employee ID  </strong></td>
+            <td>@Model.EmpID </td>
+        </tr>
+        <tr>
+            <td><strong> Employee Name &emsp;&emsp;&emsp;</strong></td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td><strong>Address</strong></td>
+            <td>@Model.Address</td>
+        </tr>
+        <tr>
+            <td><strong>Gender </strong></td>
+            <td>@Model.Gender</td>
+        </tr>
+         <tr>
+            <td><strong>City</strong></td>
+            <td>@Model.City</td>
+        </tr>
+         <tr>
+            <td><strong>Pincode</strong></td>
+            <td>@Model.Pincode</td>
+        </tr>
+        <tr>
+            <td><strong>Mobile Number </strong></td>
+            <td>@Model.Mobile</td>
+        </tr>
+         <tr>
+            <td><strong>Salary</strong></td>
+            <td>@Model.Salary</td>
+        </tr>
+        <tr>
+            <td><strong>Department </strong></td>
+            <td>@Model.Department</td>
+        </tr>
+        <tr>
+            <td><strong>Bank Account Number</strong></td>
+            <td>@Model.BankAccNo</td>
+        </tr>
+        <tr>
+            <td><strong>Email </strong></td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td><strong>Password </strong></td>
+            <td>@Model.Password</td>
+        </tr>
+</body>
+</table>
+
+
+<a asp-action="AdminHome">Go Back </a>

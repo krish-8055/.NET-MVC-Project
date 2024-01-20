@@ -1,0 +1,132 @@
+@model EmpSignin
+@{
+    ViewData["Title"] = "My Account";
+}
+@{
+  Layout = "_Employee";
+}   
+<html>
+<head>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2 style="color: #f1f1f1;"> Menu </h2>
+  <a  asp-controller="Employee" asp-action="MyAccount">
+          <span>My Account</span>
+        </a>
+        <a href="#">
+          <span>Salary Report</span>
+        </a>
+        <a  asp-controller="Employee" asp-action="Feedback"><span>Feedback</span></a>
+        <a href="#">
+         <span>Change Password</span>
+        </a>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<p>@TempData["Cookies"]</p>
+<div id="main">
+  <div >
+
+    <h1 style="text-align: center;"><i>Welocome to Payroll Management</i></h1>
+<br>
+
+
+
+<div class="row" >
+  <div class="col-sm-6">
+    <div class="card">
+  <img src="data:image/png;base64,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" alt="Avatar" style="width:100%">
+  <div class="container">
+  
+    <h4><b>@Model.Email</b></h4> 
+    <p>Employee</p> 
+  </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <img src="data:image/jpeg;base64,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" alt="Avatar" style="width:100%">
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<div class="row">
+        <p><a  class="btn btn-outline-primary"  href="/Home/Insurance" role="button"> Back</a></p> 
+</div>
+  
+</div>
+
+</body>
+</html>

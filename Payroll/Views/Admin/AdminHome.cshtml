@@ -1,0 +1,213 @@
+@model AdminLogin
+@{
+    ViewData["Title"] = "Admin Home Page";
+}
+@{
+  Layout = "_Admin";
+}
+<!DOCTYPE html>
+<html>
+<head>
+<body background="https://th.bing.com/th/id/OIP.SEBR60Abl1PhqfjUbz-g0gHaEK?w=315&h=180&c=7&r=0&o=5&pid=1.7" style="background-size: cover;"></body>  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{
+    margin-top:20px;
+    background:#FAFAFA;
+}
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+  body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+</head>
+<body>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2 style="color: #f1f1f1;"> Menu </h2>
+  <a  asp-controller="Admin" asp-action="AdminHome">
+          <span>Main dashboard</span>
+        </a>
+        <a asp-controller="Admin" asp-action="CreateEmpAccount">
+          <span>Add Employee</span>
+        </a>
+        <a  asp-controller="Admin" asp-action="EmployeeDetails" >
+            <span>Employee Details</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryClass"><span>Add Salary Class</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReportSearch">
+          <span>Search Employee Report</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReport"><span>Salary Report</span></a>
+        <a  asp-controller="Admin" asp-action="AddAdmin"><span>Add Admin</span></a>
+        <a  asp-controller="Admin" asp-action="GenerateSalary"><span>Generate Salary</span></a>       
+        <a href="#">
+         <span>Change Employee Password</span>
+        </a>
+        <a  asp-controller="Admin" asp-action="ViewFeedback"><span>View Feedbacks</span></a>
+
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<p>@TempData["Cookies"]</p>
+  <div id="main">
+  <div >
+
+    <h1 style="text-align: center;"><i>Welocome to Payroll Management</i></h1>
+<br>
+<div class="row" >
+  <div class="col-sm-6">
+    <div class="card">
+  <img src="data:image/png;base64,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" alt="Avatar" style="width:100%">
+  <div class="container">
+  
+    <h4><b>@Model.UserName</b></h4> 
+    
+  </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20">Total Employees Enrolled</h6>
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span> @ViewBag.Count</span></h2>
+             
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<div class="row">
+        <p><a  class="btn btn-outline-primary"  href="/Admin/AdminHome" role="button"> Back</a></p> 
+</div>
+  @* <div class="card">
+  <img src="data:image/png;base64,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" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Jane Doe</b></h4> 
+    <p>Interior Designer</p> 
+  </div>
+</div> *@
+</div>
+</body>
+</html> 
+
+

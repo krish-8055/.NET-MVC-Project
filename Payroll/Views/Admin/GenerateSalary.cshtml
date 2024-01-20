@@ -1,0 +1,368 @@
+@{
+    ViewData["Title"] = "Generate Salary";
+}
+@{
+  Layout = "_Admin";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+                background-image: url("data:image/jpeg;base64,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");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                overflow: hidden;
+        }
+        label
+        {
+            width: 8%;
+        }       
+        button
+        {   
+            width: 100px;
+            height: 35px;
+            background-color: rgb(31, 30, 30);
+            border-radius: 1em;
+            align-items: left;
+            flex-direction: row;
+            justify-content: left;
+            margin-left: 12%;
+            margin-top: 1.5%;   
+        }
+        button:hover 
+        {
+            background-color:rgb(82, 21, 139);
+            cursor: pointer;
+        }
+
+  body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+*{
+  box-sizing:border-box;
+}
+.container{
+  width:1000px;
+  margin:0 auto;
+  display:flex;
+  justify-content: space-between;
+}
+button{
+  &:focus{
+    outline:none;
+  }
+}
+.deck{
+  margin:15px;
+  width:270px;
+  height:380px;
+  position:relative;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  font-family:verdana;
+  border-radius:10px;
+}
+.card{
+  width:100%;
+  height:100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all .5s linear;
+  transition: all .5s linear;
+  border-radius:10px;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color:whitesmoke;  
+  border-radius:10px;
+}
+.back {
+  overflow:hidden;
+  z-index:-1;
+  display: block;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  &:before{
+    content: "";
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  z-index: -1;
+    background-size:100% 100%;
+	  background: url('https://i.imgur.com/W3tra4F.gif');
+	  -webkit-transform: rotateY(180deg);
+	  -moz-transform: rotateY(180deg);
+	  -ms-transform: rotateY(180deg);
+	  -o-transform: rotateY(180deg);
+	  transform: rotateY(180deg);
+  }
+}
+.front, .back{
+  transition: all .5s linear;
+}
+.front{
+  background-image:url('https://i.imgur.com/W3tra4F.gif');
+  z-index:1;
+  box-shadow: 5px 5px 5px #aaa;
+}
+.back{
+  box-shadow: 0 0 0 #aaa;
+}
+.flipped, .hovercard:hover{
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  .front{
+    box-shadow:0 0 0 #aaa;
+  }
+  .back{
+    box-shadow: 5px 5px 5px #aaa;
+  }
+}
+.bottext{
+  position:absolute; 
+  color:whitesmoke;
+  width:100%; 
+  height:100px; 
+  bottom:0; 
+  border-radius:0 0 10px 10px; 
+  text-align:center;
+  padding:10px;
+  h2{
+    margin:0;
+  }
+  h3{
+    margin:10px 0;
+  }
+}
+.rad-button{
+  border:2px solid gray;
+  color:gray;
+  width:90px;
+  background-color:rgba(255, 255, 255, .3);
+  padding:10px;
+  border-radius:4px;
+  cursor: pointer;
+  position:absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 110px;
+  -webkit-transition:all .5s linear;
+  transition:all .5s linear;
+}
+.rad-button:hover{
+  color:rgb(17, 148, 255);
+  background-color:rgba(255, 255, 255, 1);
+}
+
+.front{
+  h2, h3{
+    text-align:center;
+    color:whitesmoke;
+  }
+}
+
+.back{
+  h2{
+    margin:0;
+    border-radius:10px 10px 0 0;
+    padding:10px;
+    text-align:center;
+    color:whitesmoke;
+  }
+  ul{
+    text-align:center;
+    list-style:none;
+    padding:10px;
+    margin:0;
+    li{
+      margin-top:15px;
+      color:whitesmoke;
+    }
+  }
+  .botprice{
+    position:absolute;
+    bottom:30px;
+    border-radius:0 0 10px 10px;
+    text-align:center;
+    width:100%;
+    padding:15px;
+    color:whitesmoke;
+    h3{
+      margin:0px;
+    }    
+  }
+}
+.return{
+  position:absolute;
+  width:100%;
+  background-color:transparent;
+  border:none;
+  color:gray;
+  cursor:pointer;
+  padding:5px;
+  bottom:0;
+  border-radius:0 0 10px 10px;
+  background-color:darken(whitesmoke, 10%);
+  font-size:18px;
+  &:focus{
+    outline:none;
+  }
+}
+</style>
+</head>
+@* <body> *@
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+
+$(".flip").click(function(){
+  $(this).parents(".card").toggleClass("flipped");
+});
+$(".clickcard").click(function(){
+  $(this).toggleClass("flipped");
+});
+</script>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2 style="color: #f1f1f1;"> Menu </h2>
+  <a  asp-controller="Admin" asp-action="AdminHome">
+          <span>Main dashboard</span>
+        </a>
+        <a asp-controller="Admin" asp-action="CreateEmpAccount">
+          <span>Add Employee</span>
+        </a>
+        <a  asp-controller="Admin" asp-action="EmployeeDetails" >
+            <span>Employee Details</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReportSearch">
+          <span>Search Employee Report</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReport"><span>Salary Report</span></a>
+        @* <a  asp-controller="Admin" asp-action="AddAdmin"><span>Add Admin</span></a> *@
+        <a  asp-controller="Admin" asp-action="GenerateSalary"><span>Generate Salary</span></a>       
+        <a href="#">
+         <span>Change Employee Password</span>
+        </a>
+
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+<h2 style="color: black;">Generate Salary</h2><img style="margin-top: -7%;margin-left: 24%;" src="https://cdn-icons-png.flaticon.com/128/3079/3079163.png"width ="45px" height="45px" >
+<div class="container">
+ 
+  <div class="deck">
+    <div class="card hovercard">
+      <div class="front face">
+        <h2>Generate Salary for single Employee</h2>
+        <div class="bottext">
+          <h3>Click Below</h3>
+        </div>
+      </div>
+      <div class="back face">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Info:</h2>
+        <p>Click below to Generate Salary for Single Employee</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="deck">
+    <div class="card hovercard">
+      <div class="front face">
+        <h2>Generate Salary by Department</h2>
+        <div class="bottext">
+          <h3>Click Below</h3>
+        </div>
+      </div>
+      <div class="back face">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Info:</h2>
+        <p>Click below to Generate Salary by Departmemnt</p>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+<p>
+    <button style="margin-left: 10%;color: white;" type="button"">Generate</button>
+    <button asp-controller="Admin" asp-action="TaskResult"  style="margin-left: 59%;color: rgb(255, 255, 255);" type="button" >Generate</button>
+</p>
+
+</div>
+</body>
+</html> 
+
+

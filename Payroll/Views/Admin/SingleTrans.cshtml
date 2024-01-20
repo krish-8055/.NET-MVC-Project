@@ -1,0 +1,234 @@
+@model CreateEmpAccount
+
+@{
+    ViewData["Title"]="Search";
+}
+@{
+  Layout = "_Admin";
+}
+<head>
+
+    
+    <Style>
+
+      body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+th,td{
+        padding: 10px;
+        text-align: center;
+    }
+    button{
+        border:none ;
+        background-color: rgb(161, 62, 194);
+        border-radius: 7%;
+    }
+    label{
+        margin-left: 50px;
+        width: 100px;
+        font-weight: lighter;
+        font-size: larger
+    }
+    table{
+        margin-left: 150px;
+        margin-top: 10%;
+
+    }      
+        html{
+	margin:80px;
+}
+select{
+	height:48px;
+	width:80px;
+	font-size:18px;
+}
+    </Style>
+</head>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h2 style="color: #f1f1f1;"> Menu </h2>
+  <a  asp-controller="Admin" asp-action="AdminHome">
+          <span>Main dashboard</span>
+        </a>
+        <a asp-controller="Admin" asp-action="CreateEmpAccount">
+          <span>Add Employee</span>
+        </a>
+        <a  asp-controller="Admin" asp-action="EmployeeDetails" >
+            <span>Employee Details</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReportSearch">
+          <span>Search Employee Report</span></a>
+        <a  asp-controller="Admin" asp-action="SalaryReport"><span>Salary Report</span></a>
+        @* <a  asp-controller="Admin" asp-action="AddAdmin"><span>Add Admin</span></a> *@
+        <a  asp-controller="Admin" asp-action="GenerateSalary"><span>Generate Salary</span></a>       
+        <a href="#">
+         <span>Change Employee Password</span>
+        </a>
+
+</div>
+
+<body>
+  <div id="main">
+<form method="post">
+<h2 style="color: rgb(36, 186, 255));">Search Employee</h2>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<h6>NOTE : Employee ID must be valid</h6>
+<br>
+<br>
+<form class="row g-3">
+<div>
+
+    
+    <label asp-for="EmpID"> Enter Id</label>
+    <input asp-for="EmpID"placeholder="Employee ID" asp-route-EmployeeID="CreateEmpAccount.EmpID"/>
+    <label for="month">Month</label>
+        <select placeholder="MM">
+  <option name="" value="" style="display:none;">MM</option>
+  <option name="January" value="Jan">January</option>
+  <option name="February" value="Feb">February</option>
+  <option name="March" value="Mar">March</option>
+  <option name="April" value="Apr">April</option>
+	<option name="May" value="May">May</option>
+  <option name="June" value="Jun">June</option>
+  <option name="July" value="Jul">July</option>
+  <option name="August" value="Aug">August</option>
+	<option name="September" value="Sep">September</option>
+  <option name="October" value="Oct">October</option>
+  <option name="November" value="Nov">November</option>
+  <option name="December" value="Dec">December</option>
+</select>
+    <label for="inputPassword4" >Password</label>
+    <input type="password"  id="inputPassword4">
+
+    
+
+      
+  </div>
+
+</form>
+<br>
+<br>
+<p>
+    <a>@ViewBag.Message</a>
+    <button style="color: rgb(255, 255, 255);" type="Submit">Submit</button>
+</p>
+</form>
+
+<script>
+
+$(document).ready(function() {
+    $('select').change(function() {
+     $('select option')[0].value=$('select option:selected').val();
+     $('select option')[0].innerHTML=$('select option:selected').val();
+     $("select").val($('select option:selected').val());
+			
+			console.log($('select option:selected').val());
+    });
+  });
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+<a asp-action="AdminHome">Go Back</a>
+
+</body>
